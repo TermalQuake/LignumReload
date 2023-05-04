@@ -1,0 +1,8 @@
+name: LignumReload
+version: '1.0-SNAPSHOT'
+main: me.lignumreload.main
+api-version: 1.19
+commands:
+  ligreload:
+    description: Перезагрузить плагины
+    usage: /ligreload
