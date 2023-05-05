@@ -53,7 +53,6 @@ public final class main extends JavaPlugin {
                         }
                     }
 
-                    //Player player = (Player) sender; // Приводим CommandSender к типу Player
                     String title = ChatColor.RED + "Перезапуск..."; // Заголовок сообщения
                     String subtitle = ChatColor.YELLOW.toString() + "Пожалуйста, подождите."; // Подзаголовок сообщения
                     int fadeIn = 10; // Время появления заголовка (в тиках)
