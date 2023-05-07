@@ -15,7 +15,7 @@ Paper 1.19.2
 
 #### Где скачать?  
 
-Тут 
+![Тут](https://www.spigotmc.org/resources/lignumreload.109708/
 
 #### Как установить?
 
@@ -43,7 +43,7 @@ Paper 1.19.2
 
 #### Where to download??  
 
-Here 
+![Here](https://www.spigotmc.org/resources/lignumreload.109708/
 
 #### How to install?
 
