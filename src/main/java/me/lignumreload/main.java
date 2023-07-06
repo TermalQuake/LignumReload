@@ -25,7 +25,7 @@ public final class main extends JavaPlugin {
             if (cmd.getName().equalsIgnoreCase("ligreload")) {
                 if (sender instanceof Player) {
                     Player player = (Player) sender;
-                    if (!player.isOp()) { // Проверяем, является ли игрок администратором
+                    if (!player.hasPermission("lignum.*")) { // Проверяем, есть ли у игрока разрешение
                         player.sendMessage(ChatColor.RED + "У вас нет прав для выполнения этой команды.");
                         return true;
                     }
@@ -35,28 +35,28 @@ public final class main extends JavaPlugin {
                     world.save();
                     System.out.println("out.мир сохранился");
                 }
-                Player player = (Player) sender; // Приводим CommandSender к типу Player
+                Player player = (Player) sender;
                 sender.sendMessage(ChatColor.GREEN + "Технический перезапуск сервера через:");
-                player.playSound(player.getLocation(), "minecraft:entity.cat.ambient", 1.0f, 1.0f); // Проигрываем звук кота
+                player.playSound(player.getLocation(), "minecraft:entity.cat.ambient", 1.0f, 1.0f);
                 for (int i = 5; i >= 0; i--) {
                     if (i == 0) {
                         sender.sendMessage(ChatColor.RED + "Пожалуйста не двигайтесь.");
                     } else {
                         sender.sendMessage(ChatColor.YELLOW + String.valueOf(i));
-                        player.playSound(player.getLocation(), "minecraft:entity.experience_orb.pickup", 1.0f, 1.0f); // Проигрываем звук лвл
+                        player.playSound(player.getLocation(), "minecraft:entity.experience_orb.pickup", 1.0f, 1.0f);
                     }
                     try {
-                        Thread.sleep(1000); // ждём 1сек
+                        Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
-                String title = ChatColor.RED + "Перезапуск..."; // Заголовок сообщения
-                String subtitle = ChatColor.YELLOW.toString() + "Пожалуйста, подождите."; // Подзаголовок сообщения
-                int fadeIn = 10; // Время появления заголовка (в тиках)
-                int stay = 70; // Время появления заголовка (в тиках)
-                int fadeOut = 20; // Время появления заголовка (в тиках)
-                player.sendTitle(title, subtitle, fadeIn, stay, fadeOut); // Отправляем заголовок игроку
+                String title = ChatColor.RED + "Перезапуск...";
+                String subtitle = ChatColor.YELLOW.toString() + "Пожалуйста, подождите.";
+                int fadeIn = 10; // в тиках
+                int stay = 70; // в тиках
+                int fadeOut = 20; // в тиках
+                player.sendTitle(title, subtitle, fadeIn, stay, fadeOut);
                 Bukkit.getServer().reload();
                 System.out.println("out.перезапуск успешен");
                 player.playSound(player.getLocation(), "minecraft:entity.player.levelup", 1.0f, 1.0f);
