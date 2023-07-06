@@ -8,3 +8,6 @@ commands:
   ligreload:
     description: Перезагрузить плагины
     usage: /ligreload
+permissions:
+  description: adminop
+  default: op
